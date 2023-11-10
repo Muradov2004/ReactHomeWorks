@@ -1,0 +1,11 @@
+.user-container {
+    width: 400px;
+    margin: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    color: white;
+}
+
+.buttons {
+    margin: 10px;
+}
