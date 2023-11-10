@@ -9,3 +9,10 @@
 .buttons {
     margin: 10px;
 }
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
