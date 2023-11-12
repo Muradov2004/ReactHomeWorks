@@ -240,7 +240,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AddUser/>
+        <AddUser userArr={userArr} setUserArr={setUserArr}/>
         <UserA userArr={userArr} setUserArr={setUserArr}/>
       </header>
     </div>

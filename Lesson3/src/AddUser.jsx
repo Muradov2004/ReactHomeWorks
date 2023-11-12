@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
 import {Button, Form, Input, Modal} from 'antd';
 
-function AddUser() {
+let AddUser = ({userArr, setUserArr}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [userData, setUserData] = useState({name: '', username: '', email: ''});
+  const [userData, setUserData] = useState({
+    id: userArr[userArr.length - 1].id + 1,
+    name: '',
+    username: '',
+    email: ''
+  });
+
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -22,11 +28,11 @@ function AddUser() {
   };
 
   const handleAddUser = () => {
-    // Add your logic for adding the user here
-    console.log('Adding user:', userData);
-
-    // Clear the form and close the modal
-    setUserData({name: '', username: '', email: ''});
+    if (userData.name !== '' && userData.username !== '' && userData.email !== '') {
+      let newUserArr = [...userArr, userData];
+      setUserArr(newUserArr);
+      setUserData({id: `${userData.id + 1}`, name: '', username: '', email: ''});
+    }
     closeModal();
   };
 
@@ -36,17 +42,18 @@ function AddUser() {
 
         <Form>
           <Form.Item>
-            <Input placeholder='name'/>
+            <Input name='name' placeholder='name' value={userData.name} onChange={(e) => handleInputChange(e)}/>
           </Form.Item>
           <Form.Item>
-            <Input placeholder='username'/>
+            <Input name='username' placeholder='username' value={userData.username}
+                   onChange={(e) => handleInputChange(e)}/>
           </Form.Item>
           <Form.Item>
-            <Input placeholder='email'/>
+            <Input name='email' placeholder='email' value={userData.email} onChange={(e) => handleInputChange(e)}/>
           </Form.Item>
         </Form>
 
-        <Button type="primary" onClick={handleAddUser}>
+        <Button type="primary" onClick={handleAddUser} style={{width: '100%'}}>
           Add
         </Button>
       </Modal>
