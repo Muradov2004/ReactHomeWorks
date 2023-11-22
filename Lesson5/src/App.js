@@ -151,9 +151,9 @@ function App() {
         {filteredArray.map((item, index) => {
           return (
             <li key={item.id}>
-              <input defaultValue={item.name} disabled={true}/>
-              <input defaultValue={item.description} disabled={true}/>
-              <input defaultValue={item.price} disabled={true}/>
+              <p>{item.name}</p>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
               <button onClick={() => handleDel(item.id)}>DELETE</button>
               <button onClick={() => {
                 let obj = arr.find((itemGoods) => item.id === itemGoods.id)
