@@ -1,0 +1,16 @@
+ul{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 30px;
+    gap: 20px;
+}
+
+ul li{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    border:solid 2px black;
+    border-radius: 20px;
+    padding: 20px;
+}

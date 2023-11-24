@@ -1,0 +1,65 @@
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.App header nav{
+  background-color: burlywood;
+}
+
+.App header nav{
+  padding: 40px 25px;
+}
+
+.App header nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-page{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+ul{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 30px;
+  gap: 20px;
+}
+
+ul li{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  border:solid 2px black;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
+#modal{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background-color: red;
+  top: 0;
+}
+
+#modal div{
+  padding: 20px;
+  border:solid 2px black;
+
+}
