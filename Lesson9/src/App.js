@@ -1,32 +1,27 @@
-import HeaderComponent from "./HeaderComponent";
-import {Routes, Route} from "react-router-dom";
-import Home from './Home';
-import About from "./About";
 import './App.css';
-import {useEffect, useState} from "react";
-import Post from "./Post";
-import Comment from "./Comment";
+import MyBag from './MyBag';
+import Goods from './Goods';
+import { Routes, Route, Link } from 'react-router-dom';
+import Admin from './Admin';
 
 
-const App = () => {
-  let [arr, setArr] = useState([]);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then((res) => res.json())
-      .then((data) => setArr(data))
-  });
+function App() {
   return (
-    <div>
-      <HeaderComponent/>
+    <div className="App">
+      <Link to='/'>Goods</Link>
+      <Link to='/my-bag'>MyBag</Link>
+      <Link to='/admin'>Admin</Link>
+
       <Routes>
-        <Route path='/' element={<Home/>}>
-          <Route path='posts' element={<Post arr={arr}/>}/>
-          <Route path='comments' element={<Comment arr={arr}/>}/>
-        </Route>
-        <Route path='about' element={<About/>}/>
+        <Route path='/' element={<Goods />} />
+        <Route path='/my-bag' element={<MyBag />} />
+        <Route path='/admin' element={<Admin />} />
+
       </Routes>
+
+
     </div>
   );
 }
+
 export default App;
